@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>OrderApp - Patr&#243;n Builder para &#211;rdenes de Compra | OrderApp - Patr&#243;n Builder </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="OrderApp - Patr&#243;n Builder para &#211;rdenes de Compra | OrderApp - Patr&#243;n Builder ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/UPT-FAING-EPIS/examen-si889-2025-ii-u2-Brunoenr02/blob/main/README.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="OrderApp">
+            OrderApp
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><a href="https://classroom.github.com/open-in-codespaces?assignment_repo_id=21372755"><img src="https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg" alt="Open in Codespaces"></a></p>
+<h1 id="orderapp---patrón-builder-para-órdenes-de-compra">OrderApp - Patrón Builder para Órdenes de Compra</h1>
+<h2 id="-descripción">📋 Descripción</h2>
+<p>Aplicación de ejemplo que implementa el <strong>Patrón de Diseño Builder</strong> para la creación flexible y legible de órdenes de compra. Este proyecto demuestra las mejores prácticas de programación orientada a objetos y diseño de software.</p>
+<h2 id="-objetivo">🎯 Objetivo</h2>
+<p>Refactorizar una clase de orden de compra con múltiples propiedades utilizando el patrón Builder, mejorando la legibilidad del código, facilitando el mantenimiento y proporcionando una API fluida para la creación de objetos complejos.</p>
+<h2 id="-patrón-builder-implementado">🏗️ Patrón Builder Implementado</h2>
+<h3 id="ventajas-del-patrón-builder">Ventajas del Patrón Builder</h3>
+<ul>
+<li><strong>Inmutabilidad</strong>: Los objetos <code>PurchaseOrder</code> son inmutables después de su creación</li>
+<li><strong>Valores por defecto</strong>: Proporciona valores razonables sin necesidad de especificarlos</li>
+<li><strong>Interfaz fluida</strong>: Permite encadenar métodos para una sintaxis más legible</li>
+<li><strong>Validación centralizada</strong>: Todas las validaciones están en un solo lugar</li>
+<li><strong>Flexibilidad</strong>: Fácil agregar nuevos parámetros sin romper código existente</li>
+</ul>
+<h3 id="estructura-del-patrón">Estructura del Patrón</h3>
+<pre><code>PurchaseOrder (Producto)
+    └── Objeto inmutable con propiedades de solo lectura
+    
+PurchaseOrderBuilder (Constructor)
+    ├── Constructor con campos obligatorios
+    ├── Métodos With*() para configuración opcional
+    └── Método Build() para crear el objeto final
+</code></pre>
+<h2 id="-estructura-del-proyecto">📁 Estructura del Proyecto</h2>
+<pre><code>examen-si889-2025-ii-u2-Brunoenr02/
+│
+├── src/
+│   └── OrderApp/
+│       ├── OrderApp.csproj           # Proyecto principal
+│       ├── PurchaseOrder.cs          # Clase de orden de compra
+│       └── PurchaseOrderBuilder.cs   # Builder pattern
+│
+├── tests/
+│   └── OrderApp.Tests/
+│       ├── OrderApp.Tests.csproj     # Proyecto de pruebas
+│       └── PurchaseOrderTests.cs     # Pruebas unitarias
+│
+├── OrderApp.sln                      # Solución de Visual Studio
+└── README.md                         # Este archivo
+</code></pre>
+<h2 id="-tecnologías-utilizadas">🚀 Tecnologías Utilizadas</h2>
+<ul>
+<li><strong>.NET 7.0</strong>: Framework de desarrollo</li>
+<li><strong>C# 11</strong>: Lenguaje de programación</li>
+<li><strong>xUnit</strong>: Framework de pruebas unitarias</li>
+<li><strong>Visual Studio Code</strong>: IDE recomendado</li>
+</ul>
+<h2 id="-requisitos-previos">💻 Requisitos Previos</h2>
+<ul>
+<li><a href="https://dotnet.microsoft.com/download/dotnet/7.0">.NET 7.0 SDK</a> o superior</li>
+<li>Editor de código (Visual Studio, VS Code, Rider, etc.)</li>
+<li>Git para control de versiones</li>
+</ul>
+<h2 id="-instalación-y-configuración">🔧 Instalación y Configuración</h2>
+<h3 id="1-clonar-el-repositorio">1. Clonar el repositorio</h3>
+<pre><code class="lang-bash">git clone https://github.com/UPT-FAING-EPIS/examen-si889-2025-ii-u2-Brunoenr02.git
+cd examen-si889-2025-ii-u2-Brunoenr02
+</code></pre>
+<h3 id="2-restaurar-dependencias">2. Restaurar dependencias</h3>
+<pre><code class="lang-bash">dotnet restore
+</code></pre>
+<h3 id="3-compilar-el-proyecto">3. Compilar el proyecto</h3>
+<pre><code class="lang-bash">dotnet build
+</code></pre>
+<h3 id="4-ejecutar-las-pruebas">4. Ejecutar las pruebas</h3>
+<pre><code class="lang-bash">dotnet test
+</code></pre>
+<h2 id="-uso-del-builder">📖 Uso del Builder</h2>
+<h3 id="ejemplo-básico">Ejemplo Básico</h3>
+<pre><code class="lang-csharp">// Orden con valores por defecto (Quantity=1, ShippingMethod=&quot;Estándar&quot;)
+var order = new PurchaseOrderBuilder(&quot;Carlos Ruiz&quot;, &quot;Tablet&quot;)
+    .Build();
+</code></pre>
+<h3 id="ejemplo-con-configuración-completa">Ejemplo con Configuración Completa</h3>
+<pre><code class="lang-csharp">// Orden con todas las opciones configuradas
+var order = new PurchaseOrderBuilder(&quot;Lucía Gómez&quot;, &quot;Smartphone&quot;)
+    .WithQuantity(2)
+    .WithShipping(&quot;Express&quot;)
+    .WithGiftWrap()
+    .WithNotes(&quot;Entregar en horario de oficina&quot;)
+    .Build();
+
+// Obtener resumen
+string resumen = order.Summary();
+</code></pre>
+<h3 id="ejemplo-con-envoltura-sin-notas">Ejemplo con Envoltura sin Notas</h3>
+<pre><code class="lang-csharp">// Orden con envoltura de regalo pero sin notas
+var order = new PurchaseOrderBuilder(&quot;Pedro&quot;, &quot;Monitor&quot;)
+    .WithGiftWrap()
+    .Build();
+</code></pre>
+<h2 id="-pruebas-unitarias">🧪 Pruebas Unitarias</h2>
+<p>El proyecto incluye 3 pruebas unitarias que validan:</p>
+<ol>
+<li><p><strong>CrearOrdenBasica_DeberiaRetornarResumenCorrecto</strong>:</p>
+<ul>
+<li>Verifica la creación con valores por defecto</li>
+</ul>
+</li>
+<li><p><strong>CrearOrdenConEnvolturaYNotas_DeberiaIncluirAmbos</strong>:</p>
+<ul>
+<li>Valida la configuración completa de todas las opciones</li>
+</ul>
+</li>
+<li><p><strong>CrearOrdenSinNotas_DeberiaOmitirNotas</strong>:</p>
+<ul>
+<li>Comprueba el manejo correcto de campos opcionales</li>
+</ul>
+</li>
+</ol>
+<h3 id="ejecutar-pruebas">Ejecutar Pruebas</h3>
+<pre><code class="lang-bash"># Ejecutar todas las pruebas
+dotnet test
+
+# Ejecutar con salida detallada
+dotnet test --verbosity detailed
+
+# Ejecutar con cobertura de código
+dotnet test --collect:&quot;XPlat Code Coverage&quot;
+</code></pre>
+<h2 id="-valores-por-defecto">📊 Valores por Defecto</h2>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Tipo</th>
+<th>Valor por Defecto</th>
+<th>Obligatorio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CustomerName</td>
+<td>string</td>
+<td>-</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td>Product</td>
+<td>string</td>
+<td>-</td>
+<td>✅ Sí</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-documentación-del-código">📚 Documentación del Código</h2>
+<p>Todo el código está documentado utilizando <strong>comentarios XML</strong> de C# que incluyen:</p>
+<ul>
+<li>Descripciones de clases, métodos y propiedades</li>
+<li>Parámetros y valores de retorno</li>
+<li>Ejemplos de uso</li>
+<li>Excepciones que pueden lanzarse</li>
+<li>Notas y observaciones importantes</li>
+</ul>
+<h3 id="generar-documentación-xml">Generar Documentación XML</h3>
+<pre><code class="lang-bash">dotnet build /p:GenerateDocumentationFile=true
+</code></pre>
+<h2 id="-comandos-útiles">🔄 Comandos Útiles</h2>
+<pre><code class="lang-bash"># Limpiar compilaciones anteriores
+dotnet clean
+
+# Compilar en modo Release
+dotnet build --configuration Release
+
+# Ejecutar la aplicación (si tuviera un punto de entrada)
+dotnet run --project src/OrderApp
+
+# Ver información del proyecto
+dotnet list package
+</code></pre>
+<h2 id="-patrones-de-diseño-aplicados">🎨 Patrones de Diseño Aplicados</h2>
+<h3 id="builder-pattern">Builder Pattern</h3>
+<ul>
+<li><strong>Propósito</strong>: Separar la construcción de un objeto complejo de su representación</li>
+<li><strong>Beneficio</strong>: Permite crear objetos paso a paso con una interfaz fluida</li>
+<li><strong>Implementación</strong>: <code>PurchaseOrderBuilder</code> construye objetos <code>PurchaseOrder</code></li>
+</ul>
+<h3 id="immutable-object-pattern">Immutable Object Pattern</h3>
+<ul>
+<li><strong>Propósito</strong>: Crear objetos que no pueden ser modificados después de su creación</li>
+<li><strong>Beneficio</strong>: Seguridad en hilos, prevención de efectos secundarios</li>
+<li><strong>Implementación</strong>: Todas las propiedades de <code>PurchaseOrder</code> son de solo lectura</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/UPT-FAING-EPIS/examen-si889-2025-ii-u2-Brunoenr02/blob/main/README.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © 2025 Universidad Privada de Tacna - FAING - EPIS
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
