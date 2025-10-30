@@ -11,16 +11,6 @@
       }
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "README.md",
-      "output": {
-        ".html": {
-          "relative_path": "README.html"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "Resource",
       "source_relative_path": "README.md",
       "output": {
@@ -32,10 +22,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "disenio.md",
+      "source_relative_path": "README.md",
       "output": {
         ".html": {
-          "relative_path": "disenio.html"
+          "relative_path": "README.html"
         }
       },
       "version": ""
@@ -51,11 +41,11 @@
       "version": ""
     },
     {
-      "type": "Resource",
-      "source_relative_path": "index.md",
+      "type": "Conceptual",
+      "source_relative_path": "disenio.md",
       "output": {
-        "resource": {
-          "relative_path": "index.md"
+        ".html": {
+          "relative_path": "disenio.html"
         }
       },
       "version": ""
@@ -66,6 +56,16 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "index.md",
+      "output": {
+        "resource": {
+          "relative_path": "index.md"
         }
       },
       "version": ""
