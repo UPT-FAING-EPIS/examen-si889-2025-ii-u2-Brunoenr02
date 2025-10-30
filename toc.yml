@@ -4,3 +4,5 @@
   href: README.md
 - name: Diagrama de Clases
   href: disenio.md
+- name: Reporte de Cobertura
+  href: coverage/index.html

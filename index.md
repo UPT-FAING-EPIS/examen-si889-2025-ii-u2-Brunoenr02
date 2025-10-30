@@ -10,6 +10,7 @@ Bienvenido a la documentación oficial de **OrderApp**, una aplicación que impl
 
 - [README - Guía Completa](README.md)
 - [Diagrama de Clases](disenio.md)
+- [Reporte de Cobertura](coverage/index.html)
 
 ## 🏗️ Arquitectura
 
