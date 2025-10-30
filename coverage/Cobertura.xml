@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage line-rate="0.9555555555555556" branch-rate="0.7" lines-covered="43" lines-valid="45" branches-covered="7" branches-valid="10" complexity="22" version="0" timestamp="1761792483">
+  <sources>
+    <source>/home/runner/work/examen-si889-2025-ii-u2-Brunoenr02/examen-si889-2025-ii-u2-Brunoenr02/src/OrderApp/</source>
+  </sources>
+  <packages>
+    <package name="OrderApp" line-rate="0.9555555555555556" branch-rate="0.7" complexity="22">
+      <classes>
+        <class name="OrderApp.PurchaseOrder" filename="/home/runner/work/examen-si889-2025-ii-u2-Brunoenr02/examen-si889-2025-ii-u2-Brunoenr02/src/OrderApp/PurchaseOrder.cs" line-rate="0.9090909090909091" branch-rate="0.7" complexity="16">
+          <methods>
+            <method name="get_CustomerName" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="get_Product" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="get_Quantity" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="30" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="get_ShippingMethod" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="36" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="get_GiftWrap" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="42" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="get_Notes" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="48" hits="4" branch="false" />
+              </lines>
+            </method>
+            <method name="Summary" signature="()" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="100" hits="3" branch="true" condition-coverage="100% (4/4)" />
+                <line number="101" hits="3" branch="false" />
+                <line number="102" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,System.String,System.Int32,System.String,System.Boolean,System.String)" line-rate="0.8461538461538461" branch-rate="0.5" complexity="6">
+              <lines>
+                <line number="67" hits="3" branch="false" />
+                <line number="68" hits="3" branch="false" />
+                <line number="71" hits="3" branch="true" condition-coverage="50% (1/2)" />
+                <line number="72" hits="0" branch="false" />
+                <line number="73" hits="3" branch="true" condition-coverage="50% (1/2)" />
+                <line number="74" hits="0" branch="false" />
+                <line number="76" hits="3" branch="false" />
+                <line number="77" hits="3" branch="false" />
+                <line number="78" hits="3" branch="false" />
+                <line number="79" hits="3" branch="false" />
+                <line number="80" hits="3" branch="false" />
+                <line number="81" hits="3" branch="true" condition-coverage="50% (1/2)" />
+                <line number="82" hits="3" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="3" branch="false" />
+            <line number="24" hits="3" branch="false" />
+            <line number="30" hits="3" branch="false" />
+            <line number="36" hits="3" branch="false" />
+            <line number="42" hits="3" branch="false" />
+            <line number="48" hits="4" branch="false" />
+            <line number="67" hits="3" branch="false" />
+            <line number="68" hits="3" branch="false" />
+            <line number="71" hits="3" branch="true" condition-coverage="50% (1/2)" />
+            <line number="72" hits="0" branch="false" />
+            <line number="73" hits="3" branch="true" condition-coverage="50% (1/2)" />
+            <line number="74" hits="0" branch="false" />
+            <line number="76" hits="3" branch="false" />
+            <line number="77" hits="3" branch="false" />
+            <line number="78" hits="3" branch="false" />
+            <line number="79" hits="3" branch="false" />
+            <line number="80" hits="3" branch="false" />
+            <line number="81" hits="3" branch="true" condition-coverage="50% (1/2)" />
+            <line number="82" hits="3" branch="false" />
+            <line number="100" hits="3" branch="true" condition-coverage="100% (4/4)" />
+            <line number="101" hits="3" branch="false" />
+            <line number="102" hits="3" branch="false" />
+          </lines>
+        </class>
+        <class name="OrderApp.PurchaseOrderBuilder" filename="/home/runner/work/examen-si889-2025-ii-u2-Brunoenr02/examen-si889-2025-ii-u2-Brunoenr02/src/OrderApp/PurchaseOrderBuilder.cs" line-rate="1" branch-rate="1" complexity="6">
+          <methods>
+            <method name="WithQuantity" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="97" hits="1" branch="false" />
+                <line number="98" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="WithShipping" signature="(System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="114" hits="1" branch="false" />
+                <line number="115" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="WithGiftWrap" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="134" hits="2" branch="false" />
+                <line number="135" hits="2" branch="false" />
+              </lines>
+            </method>
+            <method name="WithNotes" signature="(System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="151" hits="1" branch="false" />
+                <line number="152" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="Build" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="173" hits="3" branch="false" />
+                <line number="174" hits="3" branch="false" />
+                <line number="175" hits="3" branch="false" />
+                <line number="176" hits="3" branch="false" />
+                <line number="177" hits="3" branch="false" />
+                <line number="178" hits="3" branch="false" />
+                <line number="179" hits="3" branch="false" />
+                <line number="180" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="47" hits="3" branch="false" />
+                <line number="52" hits="3" branch="false" />
+                <line number="62" hits="3" branch="false" />
+                <line number="78" hits="3" branch="false" />
+                <line number="80" hits="3" branch="false" />
+                <line number="81" hits="3" branch="false" />
+                <line number="82" hits="3" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="47" hits="3" branch="false" />
+            <line number="52" hits="3" branch="false" />
+            <line number="62" hits="3" branch="false" />
+            <line number="78" hits="3" branch="false" />
+            <line number="80" hits="3" branch="false" />
+            <line number="81" hits="3" branch="false" />
+            <line number="82" hits="3" branch="false" />
+            <line number="97" hits="1" branch="false" />
+            <line number="98" hits="1" branch="false" />
+            <line number="114" hits="1" branch="false" />
+            <line number="115" hits="1" branch="false" />
+            <line number="134" hits="2" branch="false" />
+            <line number="135" hits="2" branch="false" />
+            <line number="151" hits="1" branch="false" />
+            <line number="152" hits="1" branch="false" />
+            <line number="173" hits="3" branch="false" />
+            <line number="174" hits="3" branch="false" />
+            <line number="175" hits="3" branch="false" />
+            <line number="176" hits="3" branch="false" />
+            <line number="177" hits="3" branch="false" />
+            <line number="178" hits="3" branch="false" />
+            <line number="179" hits="3" branch="false" />
+            <line number="180" hits="3" branch="false" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
