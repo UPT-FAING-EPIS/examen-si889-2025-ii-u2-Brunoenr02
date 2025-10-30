@@ -1,0 +1,6 @@
+- name: Inicio
+  href: index.md
+- name: Guía Completa
+  href: README.md
+- name: Diagrama de Clases
+  href: disenio.md

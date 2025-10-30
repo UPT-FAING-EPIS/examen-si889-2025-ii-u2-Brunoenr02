@@ -1,0 +1,74 @@
+name: OrderApp - Publish Documentation
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-publish-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '7.0.x'
+
+      - name: Install DocFX
+        run: dotnet tool install -g docfx
+
+      - name: Install dll2mmd
+        run: dotnet tool install -g dll2mmd
+
+      - name: Restore dependencies
+        run: dotnet restore OrderApp.sln
+
+      - name: Build solution (Release)
+        run: dotnet build OrderApp.sln --configuration Release --no-restore
+
+      - name: Generate class diagram with dll2mmd
+        run: |
+          dll2mmd -f src/OrderApp/bin/Release/net7.0/OrderApp.dll -o disenio.md
+          echo "Diagrama de clases generado exitosamente"
+
+      - name: Build DocFX documentation site
+        run: |
+          docfx build docfx.json
+          echo "Documentación DocFX construida exitosamente"
+
+      - name: Copy additional documentation files
+        run: |
+          if [ -f "disenio.md" ]; then
+            cp disenio.md _site/
+            echo "Diagrama copiado a _site"
+          fi
+          if [ -f "README.md" ]; then
+            cp README.md _site/
+            echo "README copiado a _site"
+          fi
+
+      - name: List generated files (for debugging)
+        run: |
+          echo "Contenido de _site:"
+          ls -la _site/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+

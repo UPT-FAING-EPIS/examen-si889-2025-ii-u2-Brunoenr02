@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "exclude": [
+          "_site/**",
+          "obj/**",
+          "bin/**",
+          "**/obj/**",
+          "**/bin/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**",
+          "**.md"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "OrderApp",
+      "_appTitle": "OrderApp - Patrón Builder",
+      "_appFooter": "© 2025 Universidad Privada de Tacna - FAING - EPIS",
+      "_enableSearch": true,
+      "_enableNewTab": true,
+      "pdf": false
+    }
+  }
+}
