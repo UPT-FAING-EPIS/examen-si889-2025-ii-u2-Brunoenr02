@@ -158,10 +158,6 @@ dotnet test --collect:"XPlat Code Coverage"
 |-----------|------|-------------------|-------------|
 | CustomerName | string | - | ✅ Sí |
 | Product | string | - | ✅ Sí |
-| Quantity | int | 1 | ❌ No |
-| ShippingMethod | string | "Estándar" | ❌ No |
-| GiftWrap | bool | false | ❌ No |
-| Notes | string | string.Empty | ❌ No |
 
 ## 📚 Documentación del Código
 
@@ -206,32 +202,3 @@ dotnet list package
 - **Propósito**: Crear objetos que no pueden ser modificados después de su creación
 - **Beneficio**: Seguridad en hilos, prevención de efectos secundarios
 - **Implementación**: Todas las propiedades de `PurchaseOrder` son de solo lectura
-
-## 🤝 Contribuir
-
-Si deseas contribuir al proyecto:
-
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📝 Licencia
-
-Este proyecto es parte de un examen académico de la Universidad Privada de Tacna.
-
-## 👥 Autor
-
-- **Estudiante**: Brunoenr02
-- **Curso**: SI889 - Ingeniería de Software II
-- **Institución**: Universidad Privada de Tacna - FAING - EPIS
-- **Año**: 2025
-
-## 📧 Contacto
-
-Para preguntas o sugerencias, contactar a través del sistema de GitHub Issues.
-
----
-
-⭐ Si este proyecto te fue útil, considera darle una estrella en GitHub
