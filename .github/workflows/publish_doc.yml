@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -47,36 +47,39 @@ jobs:
       - name: Generate class diagram with dll2mmd
         run: |
           dll2mmd -f src/OrderApp/bin/Release/net7.0/OrderApp.dll -o disenio.md
-          echo "Diagrama de clases generado exitosamente"
+          echo "✅ Diagrama de clases generado exitosamente"
 
       - name: Build DocFX documentation site
         run: |
           docfx build docfx.json
-          echo "Documentación DocFX construida exitosamente"
+          echo "✅ Documentación DocFX construida exitosamente"
 
       - name: Copy additional documentation files
         run: |
           if [ -f "disenio.md" ]; then
             cp disenio.md _site/
-            echo "Diagrama copiado a _site"
+            echo "✅ Diagrama copiado a _site"
           fi
           if [ -f "README.md" ]; then
             cp README.md _site/
-            echo "README copiado a _site"
+            echo "✅ README copiado a _site"
           fi
 
       - name: List generated files (for debugging)
         run: |
-          echo "Contenido de _site:"
+          echo "📁 Contenido de _site:"
           ls -la _site/
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy documentation'
+
 
 
