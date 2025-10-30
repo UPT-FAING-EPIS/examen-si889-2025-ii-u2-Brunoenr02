@@ -4,33 +4,24 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  pages: write
-  id-token: write
 
 jobs:
   build-and-publish-docs:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET 6.0 (for dll2mmd)
+      - name: Setup .NET 6.0
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
 
-      - name: Setup .NET 7.0 (for the project)
+      - name: Setup .NET 7.0
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '7.0.x'
-
-      - name: Verify .NET installations
-        run: dotnet --list-sdks
 
       - name: Install DocFX
         run: dotnet tool install -g docfx
@@ -38,48 +29,21 @@ jobs:
       - name: Install dll2mmd
         run: dotnet tool install -g dll2mmd
 
-      - name: Restore dependencies
-        run: dotnet restore OrderApp.sln
+      - name: Restore and build solution
+        run: dotnet build OrderApp.sln --configuration Release
 
-      - name: Build solution (Release)
-        run: dotnet build OrderApp.sln --configuration Release --no-restore
+      - name: Generate class diagram
+        run: dll2mmd -f src/OrderApp/bin/Release/net7.0/OrderApp.dll -o disenio.md
 
-      - name: Generate class diagram with dll2mmd
-        run: |
-          dll2mmd -f src/OrderApp/bin/Release/net7.0/OrderApp.dll -o disenio.md
-          echo "✅ Diagrama de clases generado exitosamente"
+      - name: Build DocFX site
+        run: docfx build docfx.json
 
-      - name: Build DocFX documentation site
-        run: |
-          docfx build docfx.json
-          echo "✅ Documentación DocFX construida exitosamente"
-
-      - name: Copy additional documentation files
-        run: |
-          if [ -f "disenio.md" ]; then
-            cp disenio.md _site/
-            echo "✅ Diagrama copiado a _site"
-          fi
-          if [ -f "README.md" ]; then
-            cp README.md _site/
-            echo "✅ README copiado a _site"
-          fi
-
-      - name: List generated files (for debugging)
-        run: |
-          echo "📁 Contenido de _site:"
-          ls -la _site/
-
-      - name: Deploy to GitHub Pages
+      - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
-          publish_branch: gh-pages
-          force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'Deploy documentation'
+
 
 
 
