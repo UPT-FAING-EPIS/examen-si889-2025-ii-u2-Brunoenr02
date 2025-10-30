@@ -1,0 +1,12 @@
+C:\QWERTY\examen-si889-2025-ii-u2-Brunoenr02\src\OrderApp\bin\Debug\net7.0\OrderApp.deps.json
+C:\QWERTY\examen-si889-2025-ii-u2-Brunoenr02\src\OrderApp\bin\Debug\net7.0\OrderApp.dll
+C:\QWERTY\examen-si889-2025-ii-u2-Brunoenr02\src\OrderApp\bin\Debug\net7.0\OrderApp.pdb
+C:\QWERTY\examen-si889-2025-ii-u2-Brunoenr02\src\OrderApp\obj\Debug\net7.0\OrderApp.csproj.AssemblyReference.cache
+C:\QWERTY\examen-si889-2025-ii-u2-Brunoenr02\src\OrderApp\obj\Debug\net7.0\OrderApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\QWERTY\examen-si889-2025-ii-u2-Brunoenr02\src\OrderApp\obj\Debug\net7.0\OrderApp.AssemblyInfoInputs.cache
+C:\QWERTY\examen-si889-2025-ii-u2-Brunoenr02\src\OrderApp\obj\Debug\net7.0\OrderApp.AssemblyInfo.cs
+C:\QWERTY\examen-si889-2025-ii-u2-Brunoenr02\src\OrderApp\obj\Debug\net7.0\OrderApp.csproj.CoreCompileInputs.cache
+C:\QWERTY\examen-si889-2025-ii-u2-Brunoenr02\src\OrderApp\obj\Debug\net7.0\OrderApp.dll
+C:\QWERTY\examen-si889-2025-ii-u2-Brunoenr02\src\OrderApp\obj\Debug\net7.0\refint\OrderApp.dll
+C:\QWERTY\examen-si889-2025-ii-u2-Brunoenr02\src\OrderApp\obj\Debug\net7.0\OrderApp.pdb
+C:\QWERTY\examen-si889-2025-ii-u2-Brunoenr02\src\OrderApp\obj\Debug\net7.0\ref\OrderApp.dll
